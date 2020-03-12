@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:MainView.xib">
+   </FileRef>
+   <FileRef
+      location = "group:../../01709 Learning iOS Programming/Working Files/Chapter 09/iMusic/iMusic/MainView.xib">
+   </FileRef>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>
