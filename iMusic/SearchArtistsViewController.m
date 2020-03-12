@@ -9,19 +9,23 @@
 #import "SearchArtistsViewController.h"
 #import "Artist.h"
 #import "BrowseAlbumsViewController.h"
+#import "MusicStoreService.h"
 
 @interface SearchArtistsViewController ()
 @property (nonatomic, strong) NSMutableArray *artists;
+@property (nonatomic,strong) MusicStoreService *service;
 @end
 
 @implementation SearchArtistsViewController
 
 @synthesize searchBar = _searchBar;
 @synthesize artists = _artists;
+@synthesize service = _service;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	self.artists = [NSMutableArray array];
+    self.service = [[MusicStoreService alloc] init];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -40,8 +44,18 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 	[self.searchBar resignFirstResponder];
-	[self.artists addObject:[Artist artistWithID:47123955 name:@"Trivium"]];
-	[self.tableView reloadData];
+//	[self.artists addObject:[Artist artistWithID:47123955 name:@"Trivium"]];
+//	[self.tableView reloadData];
+    [self.service findArtistByArtistName:searchBar.text completionBlock:^(id result, NSError *error) {
+        if (error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Search Error" message:@"Unable to retrieve search result" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [alertView show];
+            return ;
+        }
+        // Set Artist and refresh result list
+        self.artists = result;
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - UITableViewDataSource Methods

@@ -22,6 +22,12 @@
 		119BCC192417A18B00B33A80 /* BrowseAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119BCC142417A18B00B33A80 /* BrowseAlbumsViewController.m */; };
 		119BCC1B2417A1BB00B33A80 /* trivium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119BCC1A2417A1BB00B33A80 /* trivium.jpg */; };
 		119BCC1C2417A1BB00B33A80 /* trivium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 119BCC1A2417A1BB00B33A80 /* trivium.jpg */; };
+		119BCC20241A4F6A00B33A80 /* MusicStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 119BCC1F241A4F6900B33A80 /* MusicStoreService.m */; };
+		119BCC21241A4F6A00B33A80 /* MusicStoreService.m in Sources */ = {isa = PBXBuildFile; fileRef = 119BCC1F241A4F6900B33A80 /* MusicStoreService.m */; };
+		119BCC26241A542000B33A80 /* NSDictionary+DateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 119BCC23241A542000B33A80 /* NSDictionary+DateAdditions.m */; };
+		119BCC27241A542000B33A80 /* NSDictionary+DateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 119BCC23241A542000B33A80 /* NSDictionary+DateAdditions.m */; };
+		119BCC28241A542000B33A80 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 119BCC25241A542000B33A80 /* NSString+Additions.m */; };
+		119BCC29241A542000B33A80 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 119BCC25241A542000B33A80 /* NSString+Additions.m */; };
 		C4693EED15715B0400FE7BB4 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = C4693EEA15715B0400FE7BB4 /* Artist.m */; };
 		C4693EEE15715B0400FE7BB4 /* Artist.m in Sources */ = {isa = PBXBuildFile; fileRef = C4693EEA15715B0400FE7BB4 /* Artist.m */; };
 		C4693EEF15715B0400FE7BB4 /* Album.m in Sources */ = {isa = PBXBuildFile; fileRef = C4693EEC15715B0400FE7BB4 /* Album.m */; };
@@ -82,6 +88,12 @@
 		119BCC142417A18B00B33A80 /* BrowseAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseAlbumsViewController.m; sourceTree = "<group>"; };
 		119BCC152417A18B00B33A80 /* SearchArtistsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchArtistsViewController.h; sourceTree = "<group>"; };
 		119BCC1A2417A1BB00B33A80 /* trivium.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trivium.jpg; sourceTree = "<group>"; };
+		119BCC1E241A4F6900B33A80 /* MusicStoreService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicStoreService.h; sourceTree = "<group>"; };
+		119BCC1F241A4F6900B33A80 /* MusicStoreService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicStoreService.m; sourceTree = "<group>"; };
+		119BCC22241A541F00B33A80 /* NSDictionary+DateAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DateAdditions.h"; sourceTree = "<group>"; };
+		119BCC23241A542000B33A80 /* NSDictionary+DateAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DateAdditions.m"; sourceTree = "<group>"; };
+		119BCC24241A542000B33A80 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		119BCC25241A542000B33A80 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		C4693EE915715B0400FE7BB4 /* Artist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Artist.h; sourceTree = "<group>"; };
 		C4693EEA15715B0400FE7BB4 /* Artist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Artist.m; sourceTree = "<group>"; };
 		C4693EEB15715B0400FE7BB4 /* Album.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
@@ -151,10 +163,23 @@
 		119BCC092413FE4D00B33A80 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				119BCC22241A541F00B33A80 /* NSDictionary+DateAdditions.h */,
+				119BCC23241A542000B33A80 /* NSDictionary+DateAdditions.m */,
+				119BCC24241A542000B33A80 /* NSString+Additions.h */,
+				119BCC25241A542000B33A80 /* NSString+Additions.m */,
 				119BCC0A2413FE4D00B33A80 /* UIView+Geometry.m */,
 				119BCC0B2413FE4D00B33A80 /* UIView+Geometry.h */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		119BCC1D241A4E6400B33A80 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				119BCC1E241A4F6900B33A80 /* MusicStoreService.h */,
+				119BCC1F241A4F6900B33A80 /* MusicStoreService.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		F980A0BA156C8A7600211794 /* Models */ = {
@@ -221,6 +246,7 @@
 		F9A41A781565FDE4009B4863 /* iMusic */ = {
 			isa = PBXGroup;
 			children = (
+				119BCC1D241A4E6400B33A80 /* Services */,
 				119BCC092413FE4D00B33A80 /* Categories */,
 				F980A0BB156C8A8F00211794 /* Controllers */,
 				F980A0BA156C8A7600211794 /* Models */,
@@ -419,9 +445,12 @@
 				F9A41AA31565FEC2009B4863 /* MainViewController.m in Sources */,
 				119BCBF72411B17F00B33A80 /* MusicListViewController.m in Sources */,
 				F925E6DC156836F6008D8E93 /* AboutViewController.m in Sources */,
+				119BCC28241A542000B33A80 /* NSString+Additions.m in Sources */,
 				C4693EED15715B0400FE7BB4 /* Artist.m in Sources */,
+				119BCC20241A4F6A00B33A80 /* MusicStoreService.m in Sources */,
 				C4693EEF15715B0400FE7BB4 /* Album.m in Sources */,
 				119BCC0C2413FE4D00B33A80 /* UIView+Geometry.m in Sources */,
+				119BCC26241A542000B33A80 /* NSDictionary+DateAdditions.m in Sources */,
 				119BCC072413330F00B33A80 /* MusicListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,14 +461,17 @@
 			files = (
 				119BCC192417A18B00B33A80 /* BrowseAlbumsViewController.m in Sources */,
 				119BCC0D2413FE4D00B33A80 /* UIView+Geometry.m in Sources */,
+				119BCC27241A542000B33A80 /* NSDictionary+DateAdditions.m in Sources */,
 				F9A41A981565FDE4009B4863 /* iMusicTests.m in Sources */,
 				F9A41AA41565FEC2009B4863 /* MainViewController.m in Sources */,
 				119BCC172417A18B00B33A80 /* SearchArtistsViewController.m in Sources */,
 				F925E6DD156836F6008D8E93 /* AboutViewController.m in Sources */,
+				119BCC29241A542000B33A80 /* NSString+Additions.m in Sources */,
 				119BCC082413330F00B33A80 /* MusicListCell.m in Sources */,
 				119BCC112414251000B33A80 /* AlbumDetailsViewController.m in Sources */,
 				C4693EEE15715B0400FE7BB4 /* Artist.m in Sources */,
 				C4693EF015715B0400FE7BB4 /* Album.m in Sources */,
+				119BCC21241A4F6A00B33A80 /* MusicStoreService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
