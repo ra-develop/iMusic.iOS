@@ -50,8 +50,21 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)theConnection {
-    NSString *responseString = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
-    NSLog(@"Response: %@", responseString);
+//    NSString *responseString = [[NSString alloc] initWithData:self.responseData encoding:NSUTF8StringEncoding];
+//    NSLog(@"Response: %@", responseString);
+    NSError *error;
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:self.responseData options:0 error:&error];
+    if (jsonDict) {
+        NSMutableArray *artists = [NSMutableArray array];
+        for (id artistDict in [jsonDict objectForKey:@"results"]) {
+            NSInteger artistID = [[artistDict objectForKey:@"artistID"] integerValue];
+            NSString *artistName = [artistDict objectForKey:@"artistName"];
+            [artists addObject:[Artist artistWithID:artistID name:artistName]];
+        }
+        self.completionBlock(artists, nil);
+    } else {
+        self.completionBlock(nil, error);
+    }
 }
 
 - (void)loadAlbumsForArtist:(Artist *)artist completionBlock:(ServiceCompletionBlock)completionBlock{
