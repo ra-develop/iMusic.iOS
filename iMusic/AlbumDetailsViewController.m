@@ -43,6 +43,7 @@
 }
 
 - (IBAction)saveToList:(id)sender {
+    [self.album saveAlbum];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

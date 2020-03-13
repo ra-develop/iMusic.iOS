@@ -103,7 +103,31 @@
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ALBUM_URL_FORMAT, (unsigned long)artist.artistID]];
     
     SuccessBlock successBlock = ^(NSData *responseData) {
-        NSLog(@"%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+
+        //        NSLog(@"%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+        
+        NSError *error;
+        id jsonDict = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&error];
+        if (jsonDict) {
+            NSMutableArray *albums =[NSMutableArray array];
+            for (NSDictionary *albumDict in [jsonDict objectForKey:@"results"]) {
+                if ([[albumDict objectForKey:@"wrapperType"] isEqualToString:@"collection"]) {
+                    Album *album = [[Album alloc] init];
+                    album.albumID = [[albumDict objectForKey:@"collectionId"] integerValue];
+                    album.albumName = [albumDict objectForKey:@"collectionName"];
+                    album.imageURLString =[albumDict objectForKey:@"artworkUrl100"];
+                    album.price = [albumDict objectForKey:@"collectionPrice"];
+                    album.iTunesURLString = [albumDict objectForKey:@"collectionViewUrl"];
+                    album.genre = [albumDict objectForKey:@"primaryGenreName"];
+                    album.releaseDate = [albumDict dateForKey:@"releaseDate"];
+                    album.artist = artist;
+                    [albums addObject:album];
+                }
+            }
+            completionBlock(albums, nil);
+        } else {
+            completionBlock(nil, error);
+        }
         
     };
     

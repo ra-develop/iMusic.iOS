@@ -37,6 +37,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.albums = [NSMutableArray arrayWithArray:[Album findAllAlbums]];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
