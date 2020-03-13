@@ -12,7 +12,7 @@
 #import "MusicStoreService.h"
 
 @interface SearchArtistsViewController ()
-@property (nonatomic, strong) NSMutableArray *artists;
+@property (nonatomic,strong) NSMutableArray *artists;
 @property (nonatomic,strong) MusicStoreService *service;
 @end
 

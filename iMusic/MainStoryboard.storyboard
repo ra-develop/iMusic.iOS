@@ -162,7 +162,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hU2-cX-ueo" kind="show" id="qng-ag-fZj"/>
+                                    <segue destination="hU2-cX-ueo" kind="show" identifier="browseAlbums" id="qng-ag-fZj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

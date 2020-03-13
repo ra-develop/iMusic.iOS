@@ -11,8 +11,11 @@
 #import "Album.h"
 #import "NSString+Additions.h"
 #import "HTTPGetRequest.h"
+#import "NSDictionary+DateAdditions.h"
 
 #define ARTIST_ENDPOINT_FORMAT @"http://itunes.apple.com/search?term=%@&media=music&entity=musicArtist&attribute=artistTerm&limit=20"
+#define ALBUM_URL_FORMAT @"https://itunes.apple.com/lookup?entity=album&id=%lu"
+
 
 //@interface MusicStoreService ()
 //@property (nonatomic,strong) NSURLConnection *connection;
@@ -45,7 +48,7 @@
         if (jsonDict) {
             NSMutableArray *artists = [NSMutableArray array];
             for (id artistDict in [jsonDict objectForKey:@"results"]) {
-                NSInteger artistID = [[artistDict objectForKey:@"aritstId"] integerValue];
+                NSInteger artistID = [[artistDict objectForKey:@"artistId"] integerValue];
                 NSString *artistName = [artistDict objectForKey:@"artistName"];
                 [artists addObject:[Artist artistWithID:artistID name:artistName]];
             }
@@ -96,6 +99,20 @@
 
 - (void)loadAlbumsForArtist:(Artist *)artist completionBlock:(ServiceCompletionBlock)completionBlock{
     
+
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:ALBUM_URL_FORMAT, (unsigned long)artist.artistID]];
+    
+    SuccessBlock successBlock = ^(NSData *responseData) {
+        NSLog(@"%@", [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding]);
+        
+    };
+    
+    FailureBlock failureBlock = ^(NSError *error) {
+        completionBlock(nil, error);
+    };
+    
+    HTTPGetRequest *request = [[HTTPGetRequest alloc] initWithURL:url successBlock:successBlock failureBlock:failureBlock];
+    [request startRequest];
 }
 
 - (void)fetchArtworkForAlbum:(Album *)album completionBlock:(ServiceCompletionBlock)completionBlock{

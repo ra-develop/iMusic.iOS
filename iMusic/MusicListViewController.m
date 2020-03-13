@@ -48,7 +48,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    NSLog(@"Count of albums item %lu", (unsigned long)self.albums.count);
     return self.albums.count;
 }
 //
