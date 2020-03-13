@@ -140,7 +140,14 @@
 }
 
 - (void)fetchArtworkForAlbum:(Album *)album completionBlock:(ServiceCompletionBlock)completionBlock{
+    NSURL *url = [NSURL URLWithString:album.imageURLString];
     
+    SuccessBlock successBlock = ^(NSData *responseData){
+        completionBlock([UIImage imageWithData:responseData], nil);
+    };
+    
+    HTTPGetRequest *request = [[HTTPGetRequest alloc] initWithURL:url successBlock:successBlock failureBlock:NULL];
+    [request startRequest];
 }
 
 @end

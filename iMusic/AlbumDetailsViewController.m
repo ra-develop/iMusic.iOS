@@ -6,7 +6,8 @@
 //  Copyright © 2020 TapHarmonic, LLC. All rights reserved.
 //
 
-#import "AlbumDetailsViewController.h"
+#import "AlbumDetailsViewController.h"#im
+#import "MusicStoreService.h"
 
 @interface AlbumDetailsViewController ()
 
@@ -30,7 +31,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.albumImageView.image = self.album.albumImage;
+    if (!self.album.albumImage) {
+        MusicStoreService *service = [[MusicStoreService alloc] init];
+        [service fetchArtworkForAlbum:self.album completionBlock:^(id result, NSError *error) {
+            self.album.albumImage = result;
+            self.albumImageView.image = result;
+        }];
+    } else {
+        self.albumImageView.image = self.album.albumImage;
+    }
+    
     self.albumNameLabel.text = self.album.albumName;
     self.artistNameLabel.text = self.album.artist.artistName;
     self.genereLabel.text = self.album.genre;
