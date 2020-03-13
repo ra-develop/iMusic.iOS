@@ -12,6 +12,7 @@
 #import "NSString+Additions.h"
 #import "HTTPGetRequest.h"
 #import "NSDictionary+DateAdditions.h"
+#import "AFImageRequestOperation.h"
 
 #define ARTIST_ENDPOINT_FORMAT @"http://itunes.apple.com/search?term=%@&media=music&entity=musicArtist&attribute=artistTerm&limit=20"
 #define ALBUM_URL_FORMAT @"https://itunes.apple.com/lookup?entity=album&id=%lu"
@@ -140,14 +141,22 @@
 }
 
 - (void)fetchArtworkForAlbum:(Album *)album completionBlock:(ServiceCompletionBlock)completionBlock{
+    
+    
     NSURL *url = [NSURL URLWithString:album.imageURLString];
+
+//    SuccessBlock successBlock = ^(NSData *responseData){
+//        completionBlock([UIImage imageWithData:responseData], nil);
+//    };
+//
+//    HTTPGetRequest *request = [[HTTPGetRequest alloc] initWithURL:url successBlock:successBlock failureBlock:NULL];
+//    [request startRequest];
     
-    SuccessBlock successBlock = ^(NSData *responseData){
-        completionBlock([UIImage imageWithData:responseData], nil);
-    };
-    
-    HTTPGetRequest *request = [[HTTPGetRequest alloc] initWithURL:url successBlock:successBlock failureBlock:NULL];
-    [request startRequest];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFImageRequestOperation *operation = [AFImageRequestOperation imageRequestOperationWithRequest:request success:^(UIImage *image){
+        completionBlock(image, nil);
+    }];
+    [operation start];
 }
 
 @end
