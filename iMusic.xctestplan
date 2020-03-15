@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "36A8EB4B-CB1C-4DF4-8F16-5E4875B14134",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:iMusic.xcodeproj",
+      "identifier" : "F9A41A6D1565FDE4009B4863",
+      "name" : "iMusic"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:iMusic.xcodeproj",
+        "identifier" : "117D441B241D623700A49F65",
+        "name" : "iMusicTests"
+      }
+    }
+  ],
+  "version" : 1
+}
