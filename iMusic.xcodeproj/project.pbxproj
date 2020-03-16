@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		117D443B241E82D300A49F65 /* ArtistTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 117D443A241E82D300A49F65 /* ArtistTests.m */; };
+		117D4464241FA75100A49F65 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 117D4456241FA75100A49F65 /* libOCMock.a */; };
+		117D4466241FB3F800A49F65 /* AlbumIntTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 117D4465241FB3F800A49F65 /* AlbumIntTest.m */; };
 		119BCBF72411B17F00B33A80 /* MusicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119BCBF62411B17F00B33A80 /* MusicListViewController.m */; };
 		119BCC0224131E1600B33A80 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 119BCC0124131E1600B33A80 /* MainStoryboard.storyboard */; };
 		119BCC072413330F00B33A80 /* MusicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 119BCC062413330F00B33A80 /* MusicListCell.m */; };
@@ -63,6 +65,20 @@
 		117D442D241E7F4300A49F65 /* iMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		117D4431241E7F4400A49F65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		117D443A241E82D300A49F65 /* ArtistTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtistTests.m; sourceTree = "<group>"; };
+		117D4456241FA75100A49F65 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		117D4458241FA75100A49F65 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		117D4459241FA75100A49F65 /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
+		117D445A241FA75100A49F65 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		117D445B241FA75100A49F65 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		117D445C241FA75100A49F65 /* OCMVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMVerifier.h; sourceTree = "<group>"; };
+		117D445D241FA75100A49F65 /* OCMFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMFunctions.h; sourceTree = "<group>"; };
+		117D445E241FA75100A49F65 /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
+		117D445F241FA75100A49F65 /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
+		117D4460241FA75100A49F65 /* OCMQuantifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMQuantifier.h; sourceTree = "<group>"; };
+		117D4461241FA75100A49F65 /* OCMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
+		117D4462241FA75100A49F65 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		117D4463241FA75100A49F65 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		117D4465241FB3F800A49F65 /* AlbumIntTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlbumIntTest.m; sourceTree = "<group>"; };
 		119BCBF52411B17F00B33A80 /* MusicListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicListViewController.h; sourceTree = "<group>"; };
 		119BCBF62411B17F00B33A80 /* MusicListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicListViewController.m; sourceTree = "<group>"; };
 		119BCC0124131E1600B33A80 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -140,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				117D4464241FA75100A49F65 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +178,37 @@
 			children = (
 				117D4431241E7F4400A49F65 /* Info.plist */,
 				117D443A241E82D300A49F65 /* ArtistTests.m */,
+				117D4465241FB3F800A49F65 /* AlbumIntTest.m */,
 			);
 			path = iMusicTests;
+			sourceTree = "<group>";
+		};
+		117D4455241FA75100A49F65 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				117D4456241FA75100A49F65 /* libOCMock.a */,
+				117D4457241FA75100A49F65 /* OCMock */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		117D4457241FA75100A49F65 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				117D4458241FA75100A49F65 /* OCMockObject.h */,
+				117D4459241FA75100A49F65 /* OCMMacroState.h */,
+				117D445A241FA75100A49F65 /* OCMock.h */,
+				117D445B241FA75100A49F65 /* NSNotificationCenter+OCMAdditions.h */,
+				117D445C241FA75100A49F65 /* OCMVerifier.h */,
+				117D445D241FA75100A49F65 /* OCMFunctions.h */,
+				117D445E241FA75100A49F65 /* OCMStubRecorder.h */,
+				117D445F241FA75100A49F65 /* OCMRecorder.h */,
+				117D4460241FA75100A49F65 /* OCMQuantifier.h */,
+				117D4461241FA75100A49F65 /* OCMLocation.h */,
+				117D4462241FA75100A49F65 /* OCMConstraint.h */,
+				117D4463241FA75100A49F65 /* OCMArg.h */,
+			);
+			path = OCMock;
 			sourceTree = "<group>";
 		};
 		119BCC042413324100B33A80 /* Cells */ = {
@@ -263,6 +309,7 @@
 				F9A41A781565FDE4009B4863 /* iMusic */,
 				119BCC4E241D217500B33A80 /* iMusic.xctestplan */,
 				117D442E241E7F4300A49F65 /* iMusicTests */,
+				117D4455241FA75100A49F65 /* Libraries */,
 				F9A41A711565FDE4009B4863 /* Frameworks */,
 				F9A41A6F1565FDE4009B4863 /* Products */,
 			);
@@ -447,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				117D443B241E82D300A49F65 /* ArtistTests.m in Sources */,
+				117D4466241FB3F800A49F65 /* AlbumIntTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,12 +595,18 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Libraries";
 				INFOPLIST_FILE = iMusicTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ra-develop.iMusicTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -604,11 +658,17 @@
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Libraries";
 				INFOPLIST_FILE = iMusicTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Libraries",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ra-develop.iMusicTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -667,8 +727,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMusic/iMusic-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "iMusic/iMusic-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -679,8 +741,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iMusic/iMusic-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "iMusic/iMusic-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

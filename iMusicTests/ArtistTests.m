@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "Artist.h"
+#import <OCMock/OCMock.h>
 
 @interface ArtistTests : XCTestCase
 
@@ -59,6 +60,29 @@
 -(void)testAdoptNSCoding {
     Artist *artist = [[Artist alloc] initWithID:artistID name:artistName];
     XCTAssertTrue([artist conformsToProtocol:@protocol(NSCoding)], @"Arist does not adopt NSCoding");
+}
+
+-(void)testInitWithCoder {
+    id stubCoder = [OCMockObject mockForClass:[NSCoder class]];
+    NSInteger localArtistID = (NSInteger)artistID;
+    [[[stubCoder stub] andReturnValue:OCMOCK_VALUE(localArtistID)] decodeIntegerForKey:@"artistID"];
+    [[[stubCoder stub] andReturn:artistName] decodeObjectForKey:@"artistName"];
+    
+    Artist *artist = [[Artist alloc] initWithCoder:stubCoder];
+    
+    XCTAssertEqual(artist.artistID, artistID);
+    XCTAssertEqualObjects(artist.artistName, artistName);
+}
+
+-(void)testEncoderWithCoder {
+    id mockCoder = [OCMockObject mockForClass:[NSCoder class]];
+    [[mockCoder expect] encodeInteger:artistID forKey:@"artistID"];
+    [[mockCoder expect] encodeObject:artistName forKey:@"artistName"];
+    
+    Artist *artist = [Artist artistWithID:artistID name:artistName];
+    [artist encodeWithCoder:mockCoder];
+    
+    [mockCoder verify];
 }
 
 @end
